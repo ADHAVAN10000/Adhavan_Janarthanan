@@ -1,0 +1,232 @@
+def AJ():
+    import sam 
+    import speech_recognition as sr
+    a=sr.Recognizer()
+    import pyttsx3 as r
+    engine = r.init()
+    import webbrowser as web
+    from datetime import datetime
+    import wikipedia as wiki
+    import urllib.request
+    import urllib.parse
+    import re
+    import time
+    import os
+    import pafy
+    import youtube_dl
+    import urllib
+    import ctypes
+    import shutil
+    i=1
+    j=1
+    k=1
+    c=1
+    zz=1
+    						    
+                                                                                       
+
+
+						
+    def speak(n):
+        engine.say(n)
+        engine.runAndWait()
+    with sr.Microphone() as speech:
+        print("Say Hello AJ To Access Desktop Assist")
+        speak("Say Hello AJ,,, To Access Desktop Assist")
+        print()
+        text=sam.AJ1()
+        def reg():
+            while True:
+                try:
+                    spoke=a.listen(speech)
+                    text=a.recognize_google(spoke)
+                    return text
+                    break
+                except:
+                    continue
+        if i is 1 and(text=="hello aj" or text=="hello AJ" or text=="hello age" or text=="hello Age" or text=="Hello age" or text=="Hello Age"):
+            print("Hello")
+            speak("Hello")
+            print()
+            print("Please Tell Me Your Name")
+            speak("please tell me your name")
+            name=reg()
+            print()
+            print("Is That "+name)
+            speak("is that"+name)
+            name1=name
+            print()
+           						
+            speak("to confirm,, say yes,,,or ,say no")
+            text1=reg()
+            if "yes" in text1:
+                print()
+                print("Hai "+name+" I am AJ Your Desktop Assist")
+                speak("hai, "+name+", i am aj, your Desktop Assist")
+            else:
+                print()
+                print("Please Enter Your Name")
+                speak("please enter your name")
+                print()
+                name=input()
+                print()
+                if name == name1:
+                    print("Hae,That's What I Said")
+                    speak("hae,that's what i said")
+                    print()
+                print("Hai "+name+" I am AJ Your Desktop Assist")
+                speak("hai, "+name+", i am aj, your Desktop Assist")
+            print()
+            print("How Can I Help You")
+            speak("how can i help you")
+            print()
+            speak("speak")
+            text=reg()
+            i+=1
+        while True:
+            def out():
+                print("Listening....")
+                speak("Listening")
+                					
+            if text=="quit" or text=="thank you" or text=="bye":
+                print("Going To Sleep Mode")
+                speak("Going To Sleep Mode")
+                print()
+                text=sam.AJ1()
+                m="Hello, Welcome Back "+name
+                print(m)
+                speak(m)
+                print()
+                p=out()
+                print()
+                text=reg()
+            if text=="thank you AJ" or text=="thank you aj" or text=="thank you age" or text=="thank you agent" or text=="thank you image" or text=="thank you ji" or text=="thankyou AJ":
+                print("Have a Good Day "+name)
+                speak("have a good day,"+name)
+                break
+            elif text == "Google" or text == "open Google":
+                web.open("http://www.google.com")
+                speak("opening google")
+                p=out()
+                text=reg()
+            elif text == "YouTube" or text == "open YouTube":
+                web.open("http://www.youtube.com")
+                speak("opening YouTube")
+                p=out()
+                text=reg()
+            elif text == "Gmail" or text == "open Gmail":
+                web.open("https://www.gmail.com/")
+                					
+                p=out()
+                text=reg()
+            elif text == "WhatsApp" or text == "open WhatsApp":
+                web.open("https://web.whatsapp.com/")
+                speak("opening Whatsapp")
+                p=out()
+                text=reg()
+            elif text == "Flipkart" or text == "open Flipkart":
+                web.open("http://www.flipkart.com")
+                speak("opening Flipkart")
+                p=out()
+                text=reg()
+            elif text == "Amazon" or text == "open Amazon":
+                web.open("http://www.amazon.com")
+                speak("opening amazon")
+                p=out()
+                text=reg()
+            elif text == "Facebook" or text == "open Facebook":
+                web.open("http://www.facebook.com")
+                speak("opening facebook")
+                p=out()
+                text=reg()
+            elif "date" in text:
+                now=datetime.now()
+                year=now.year
+                month=now.month
+                day=now.day
+                print()
+                print(str(day)+"."+str(month)+"."+str(year))
+                speak(day)
+                					
+                speak(year)
+                print()
+                p=out()
+                print()
+                text=reg()
+            elif "time" in text:
+                d=""
+                now=datetime.now()
+                hour=now.hour
+                min=now.minute
+                if hour>12 and hour<24:
+                    if min<=59 or min>=0:
+                        d="Pm"
+                        hour-=12
+                elif hour == 0:
+                    d="Am"
+                    hour+=12
+                else:
+                    d="pm"
+                print()
+                print(str(hour)+"."+str(min),d)
+                speak(hour)
+                speak(min)
+                if "Am" in d:
+                    speak("a,m")
+                else:
+                    speak("p,m")
+                print()
+                p=out()
+                print()
+                					
+            elif "new URL" in text:
+                print("Please Tell Me The URL That You Want To Visit")
+                speak("Please Tell Me The URL That You Want To Visit")
+                print()
+                text=reg()
+                web.open("www."+text+".com")
+                print("Opening "+text)
+                c="opening "+text
+                speak(c)
+                print()
+                p=out()
+                print()
+                text=reg()
+            elif text == "search":
+                print()
+                print("Content or Video")
+                speak("content or video")
+                text=reg()
+                if text == "content":
+                    print()
+                    print("what is the content")
+                    speak("what is the content")
+                    print()
+                    p=out()
+                    text=reg()
+                    web.open("https://www.google.com/search?q="+text)
+                    p=out()
+                    text=reg()
+                elif text == "video":
+                    print()
+               
+                    speak("tell the topic of the video your looking for")
+                    print()
+                    p=out()
+                    text=reg()
+                    web.open("https://www.youtube.com/results?search_query="+text)
+                    print("Opening")
+                    speak("Opening")
+                    web.open(text)
+                    print()
+                    p=out()
+                    text=reg()
+            elif "what is" in text or "where is" in text or "who is" in text or "how is" in text or "when" in text:
+                wik=wiki.search(text)
+                print(wik)
+                speak(wik)
+                print()
+                p=out()
+                print()
+                text=reg()
+     
